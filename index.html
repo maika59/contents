@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Prompt Studio | AI Illustration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="background-overlay"></div>
+
+    <div class="app-container">
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">✨</span>
+                <h1>Lumina <span class="highlight">Studio</span></h1>
+            </div>
+            <p class="subtitle">Next-Gen AI Illustration Prompt Generator</p>
+        </header>
+
+        <main class="main-content">
+            <div class="glass-panel input-panel">
+                <div class="section-title">
+                    <h2>Configuration</h2>
+                    <div class="neon-line"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subjectInput">Subject & Idea</label>
+                    <textarea id="subjectInput" rows="3" placeholder="e.g. A cybernetic angel flying over a futuristic neon city..."></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="styleSelect">Art Style</label>
+                        <select id="styleSelect">
+                            <option value="masterpiece, best quality, ultra-detailed, illustration">Anime Masterpiece</option>
+                            <option value="photorealistic, 8k resolution, highly detailed, Unreal Engine 5 render">Photorealistic</option>
+                            <option value="cyberpunk art style, neon lights, dystopian, futuristic">Cyberpunk</option>
+                            <option value="watercolor painting, traditional media, soft edges, ethereal">Watercolor</option>
+                            <option value="dark fantasy, gothic, macabre, intricate details">Dark Fantasy</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="lightingSelect">Lighting</label>
+                        <select id="lightingSelect">
+                            <option value="cinematic lighting, dramatic shadows, ray tracing">Cinematic</option>
+                            <option value="soft lighting, natural light, golden hour">Golden Hour</option>
+                            <option value="neon lighting, rim light, glowing effects">Neon</option>
+                            <option value="volumetric lighting, god rays, misty">Volumetric</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cameraSelect">Camera / Angle</label>
+                        <select id="cameraSelect">
+                            <option value="dynamic angle, dutch angle">Dynamic</option>
+                            <option value="close-up portrait, shallow depth of field, bokeh">Close-up</option>
+                            <option value="wide angle lens, establishing shot, panoramic">Wide Angle</option>
+                            <option value="from below, looking up, imposing">From Below</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="generateBtn" class="btn-glow">
+                    <span class="btn-text">Generate Prompt</span>
+                    <span class="btn-icon">🔮</span>
+                </button>
+            </div>
+
+            <div class="glass-panel output-panel">
+                <div class="section-title">
+                    <h2>Generated Prompt</h2>
+                    <div class="neon-line"></div>
+                </div>
+
+                <div class="output-container">
+                    <div id="outputArea" class="output-text">
+                        <div class="placeholder">
+                            <span class="placeholder-icon">🪄</span>
+                            <p>Your crafted prompt will appear here...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="negative-prompt-container">
+                    <h3>Negative Prompt (Copy to avoid bad generations)</h3>
+                    <div class="negative-text" id="negativePrompt">
+                        (worst quality, low quality:1.4), bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="copyBtn" class="btn-secondary" disabled>
+                        <span class="icon">📋</span> Copy Positive
+                    </button>
+                    <button id="copyNegBtn" class="btn-secondary">
+                        <span class="icon">📋</span> Copy Negative
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
